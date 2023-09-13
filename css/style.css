@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+.navigasi {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  background-color: blue;
+}
+.navigasi h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-style: italic;
+  /* text-shadow: 3px 3px 5px white; */
+}
+.navigasi h1 > span {
+  color: white;
+}
+.navigasi .navigasi-navbar {
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.navigasi .navigasi-navbar a:hover {
+  color: white;
+}
+.navigasi .navigasi-navbar a::after {
+  content: "";
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid white;
+  display: block;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navigasi .navigasi-navbar a:hover::after {
+  transform: scaleX(0.8);
+}
+.navigasi .navigasi-extra {
+  display: flex;
+  gap: 1.1rem;
+}
+.navigasi .navigasi-extra li {
+  display: inline-block;
+  cursor: pointer;
+}
+.navigasi .navigasi-extra .menu {
+  display: none;
+}
+
+/* responsive */
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+  /* navbar start */
+  .navigasi .navigasi-navbar {
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 25rem;
+    height: 100vh;
+    transition: 0.3s linear;
+  }
+  .navigasi .navigasi-navbar.active {
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    width: 25rem;
+    height: 100vh;
+    transition: 0.3s linear;
+  }
+  .navigasi .navigasi-navbar a {
+    font-size: 2rem;
+    padding: 20px 20px;
+    display: block;
+  }
+  .navigasi .navigasi-navbar a::after {
+    content: "";
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid white;
+    display: block;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+  }
+  .navigasi .navigasi-navbar a:hover::after {
+    transform: scaleX(0.3);
+    transform-origin: 0 0;
+  }
+  .navigasi .navigasi-extra .menu {
+    display: inline-block;
+  }
+  /* navbar end */
+}
+/* mobile */
+@media (max-width: 400px) {
+  html {
+    font-size: 55%;
+  }
+}
